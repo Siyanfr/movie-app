@@ -12,9 +12,10 @@ function Home (){
         {id: 3, title:"Interstellar", release_date: "2014-11-07"},
     ]
 
-    const handleSearch = () => 
-        e.preventDefault()
+    const handleSearch = (e) => {
+        e.preventDefault();
         alert(`Searching for: ${searchquery}`);
+        setSearchQuery("");
     }
 
     return (
