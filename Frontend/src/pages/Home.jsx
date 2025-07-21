@@ -29,10 +29,11 @@ function Home (){
     const handleSearch = async (e) => {
         e.preventDefault();
         if (!searchquery.trim()) return;
-        if (loading) return;
-        setLoading(true);
+        if (loading) return
+        setLoading(true)
+
         try{
-            const searchResults = await searchMovies(searchQuery);
+            const searchResults = await searchMovies(searchquery);
             setMovies(searchResults);
             setError(null);
         } catch (err) {
@@ -41,13 +42,6 @@ function Home (){
         } finally{
             setLoading(false);
         }
-
-        
-
-
-
-
-        setSearchQuery("");
     };
 
     return (
