@@ -12,15 +12,18 @@ function Home (){
     useEffect(() => {
         const loadPopularMovies = async () => {
             try{
-                const popularMovies= await getPopularMovies();
+                const popularMovies= await getPopularMovies()
                 setMovies(popularMovies);
-            } catch (err){}
-            finally{}
+            } catch (err){
+                console.log(err)
+                setError("Failed to load movies")
+            }
+            finally{
+                setLoading(false);
+            }
         }
-    }, []);
+    }, [])
        
-
-
     const handleSearch = (e) => {
         e.preventDefault();
         alert({searchquery});
