@@ -10,13 +10,13 @@ function Home (){
         {id: 1, title:"Joker", release_date: "2019"},
         {id: 2, title:"Inception", release_date: "2010-07-16"},
         {id: 3, title:"Interstellar", release_date: "2014-11-07"},
-    ]
+    ];
 
     const handleSearch = (e) => {
         e.preventDefault();
         alert(`Searching for: ${searchquery}`);
         setSearchQuery("");
-    }
+    };
 
     return (
     <div className="home">
@@ -33,7 +33,7 @@ function Home (){
 
         <div className="movies-grid">
             {movies.map((movie) => (
-                movie.title.toLowerCase().startsWith(searchquery) && (
+                (
                 <MovieCard movie ={movie} key={movie.id}/>
                 )
             ))}
