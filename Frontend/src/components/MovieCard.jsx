@@ -1,12 +1,12 @@
 import "../css/MovieCard.css";
+import { useMovieContext } from "../contexts/MovieContext";
 
 function MovieCard({movie}){
-
+    const {isFavorite, addToFavorites, removeFromFavorites} = useMovieContext();
+    
     function onFavoriteClick() {
         alert("clicked")
     }
-
-
 
     return <div className="movie-card">
         <div className="movie-poster">
